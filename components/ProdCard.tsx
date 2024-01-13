@@ -8,6 +8,7 @@ const ProdCard = ({ prod, prod_id, prod_price, image }: { prod: string, prod_id:
       method: "POST",
       body: JSON.stringify({
         product_name: prod,
+        product_image: image,
         product_id: prod_id,
         product_price: prod_price,
         quantity: 1

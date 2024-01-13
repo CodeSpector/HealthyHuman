@@ -5,6 +5,7 @@ import CartProdCart from '@/components/CartProdCart';
 
 interface Product {
   product_name: string;
+  product_image: string;
   product_id: number;
   product_price: number;
   quantity: number;
@@ -31,11 +32,12 @@ const CartPage = () => {
   }, []);
   return (
     <div>
+      <h1 className='text-4xl font-bold md:p-10 text-slate-800'>Cart</h1>
       {isLoading && <p>Loading products...</p>}
       {products.length > 0 && (
         <ul className='mt-5 flex flex-col md:flex-row flex-wrap'>
           {products.map((product) => (
-            <CartProdCart prod_img={""} prod_name={product.product_name} prod_price={product.product_price} prod_quantity={product.quantity} />
+            <CartProdCart prod_img={product.product_image} prod_name={product.product_name} prod_price={product.product_price} prod_quantity={product.quantity} />
           ))}
         </ul>
       )}

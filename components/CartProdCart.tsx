@@ -4,7 +4,7 @@ const CartProdCart = ({ prod_img, prod_name, prod_price, prod_quantity }: { prod
   return (
     <div>
       <div className="flex flex-col m-5 p-5 bg-slate-200 shadow-black shadow-md">
-        <Image alt="Image" width={5} height={5} src={prod_img} className="" />
+        <Image alt="Image" width={500} height={500} src={prod_img} className="" />
         <br />
         <div className="flex flex-row justify-between">
           <h1 className="text-2xl font-bold">{prod_name}</h1>
