@@ -1,6 +1,3 @@
-import ProdCard from '@/components/ProdCard';
-import { products } from '@/utils/products';
-
 export default function Home() {
   return (
     <main className="flex min-h-screen">
@@ -23,12 +20,6 @@ export default function Home() {
           Shop Now
         </a>
       </div>
-
-      {/* {products.map((prod) => { */}
-      {/*   return ( */}
-      {/*     <ProdCard key={prod.id} prod={prod.name} image={prod.image} /> */}
-      {/*   ) */}
-      {/* })} */}
     </main>
   )
 }
