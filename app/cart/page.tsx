@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
+import CartProdCart from '@/components/CartProdCart';
 
 interface Product {
   product_name: string;
@@ -32,11 +33,9 @@ const CartPage = () => {
     <div>
       {isLoading && <p>Loading products...</p>}
       {products.length > 0 && (
-        <ul>
+        <ul className='mt-5 flex flex-col md:flex-row flex-wrap'>
           {products.map((product) => (
-            <li key={product.product_id}>
-              Product ID: {product.product_id}, Name: {product.product_name}, Price: {product.product_price}, Amount: {product.quantity}
-            </li>
+            <CartProdCart prod_img={""} prod_name={product.product_name} prod_price={product.product_price} prod_quantity={product.quantity} />
           ))}
         </ul>
       )}
