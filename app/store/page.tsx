@@ -10,7 +10,7 @@ const Store = () => {
       <br />
       <h1 className="p-5 text-slate-800 font-bold text-4xl">Browse our bestsellers!</h1>
       <div className="flex flex-col md:flex-row flex-wrap ">
-        {products.map((product) => { return <ProductCard key={product.id} prod_id={product.id} prod={product.name} image={product.image} /> })}
+        {products.map((product) => { return <ProductCard key={product.id} prod_id={product.id} prod={product.name} prod_price={product.price} image={product.image} /> })}
       </div>
     </div>
   );

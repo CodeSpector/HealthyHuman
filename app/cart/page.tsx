@@ -3,7 +3,9 @@
 import { useEffect, useState } from 'react';
 
 interface Product {
+  product_name: string;
   product_id: number;
+  product_price: number;
   quantity: number;
 }
 
@@ -33,7 +35,7 @@ const CartPage = () => {
         <ul>
           {products.map((product) => (
             <li key={product.product_id}>
-              Product ID: {product.product_id}, Amount: {product.quantity}
+              Product ID: {product.product_id}, Name: {product.product_name}, Price: {product.product_price}, Amount: {product.quantity}
             </li>
           ))}
         </ul>
