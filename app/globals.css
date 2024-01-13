@@ -2,8 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'minecraft';
+  src:
+    local("minecraft"),
+    url("MC-REGULAR.otf") format("opentype") tech(color-COLRv1);
+}
+
 :root {
-  --foreground-rgb: 0,0,0;
+  --foreground-rgb: 0, 0, 0;
   --background-start-rgb: #F4B335;
   --background-end-rgb: #F4B335;
 }
@@ -19,4 +26,9 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-start-rgb);
+}
+
+.hero-text {
+  font-family: 'minecraft';
+  text-shadow: 0.25rem 0.25rem blue, -0.25rem -0.25rem blue;
 }
