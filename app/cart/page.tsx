@@ -1,27 +1,43 @@
 "use client"
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-type Items<> = {
-  product_id: number,
-  quantity: number,
+interface Product {
+  product_id: number;
+  quantity: number;
 }
 
 const CartPage = () => {
-
-  const cartItems = fetch('/api/cart/');
+  const [products, setProducts] = useState<Product[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const cartItems = fetch('/api/cart/');
-    if (!cartItems) { document.getElementById("cart")?.innerText.replace("", "death") }
-    console.log(cartItems);
-  });
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch('/api/cart'); // Replace with your API endpoint
+        const data = await response.json();
+        setProducts(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
+    fetchProducts();
+  }, []);
   return (
     <div>
-      <h1>Cart</h1>
-      <div id="cart">
-      </div>
+      {isLoading && <p>Loading products...</p>}
+      {products.length > 0 && (
+        <ul>
+          {products.map((product) => (
+            <li key={product.product_id}>
+              Product ID: {product.product_id}, Amount: {product.quantity}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 }
