@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Nav zIndex='z-10 fixed' />
+        <Nav zIndex='z-50 fixed' />
         {children}
       </body>
     </html>

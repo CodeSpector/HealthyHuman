@@ -14,7 +14,7 @@ export default function Home() {
         <img src="/blueberry.svg" className='hidden md:block z-10 translate-y-[75vh] md:translate-x-[65vw] 2xl:translate-x-[73vw] fixed' />
       </div>
 
-      <div className='flex flex-col w-screen h-screen md:justify-center align-middle z-50 p-10'>
+      <div className='flex flex-col w-screen h-screen md:justify-center align-middle z-20 p-10'>
         {/* <h1 className='text-5xl font-bold text-orange-700'>Healthy Human</h1> */}
         {/* <p className='text-xl text-orange-600'>Healthy Human is a health food store that sells a variety of products from fruits to vegetables to grains.</p> */}
         <img src="/hero-text.svg" className="w-[50rem] md:text-3xl md:w-[60rem]" />
