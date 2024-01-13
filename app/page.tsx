@@ -11,7 +11,7 @@ export default function Home() {
         <img src="/blueberry.svg" className='hidden md:block z-10 translate-y-[75vh] md:translate-x-[65vw] 2xl:translate-x-[73vw] fixed' />
       </div>
 
-      <div className='flex flex-col w-screen h-screen justify-center items-center align-middle z-20 -translate-x-[17vw] text-center md:p-10  md:translate-x-0'>
+      <div className='flex flex-col w-screen h-screen justify-center items-center align-middle z-20 -translate-x-[17vw] text-center md:p-10 '>
         <h1 className='hero-text text-6xl font-extrabold text-yellow-300 uppercase'>Discover the taste of nature{"'"}s <br /> sweetest mangoes</h1>
         {/* <p className='text-xl text-orange-600'>Healthy Human is a health food store that sells a variety of products from fruits to vegetables to grains.</p> */}
         {/* <img src="/hero-text.svg" className="w-[50rem] md:text-3xl md:w-[60rem]" /> */}
