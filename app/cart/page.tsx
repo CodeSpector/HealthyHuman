@@ -37,7 +37,7 @@ const CartPage = () => {
       {products.length > 0 && (
         <ul className='mt-5 flex flex-col md:flex-row flex-wrap'>
           {products.map((product) => (
-            <CartProdCart prod_img={product.product_image} prod_name={product.product_name} prod_price={product.product_price} prod_quantity={product.quantity} />
+            <CartProdCart key={product.product_id} prod_img={product.product_image} prod_name={product.product_name} prod_price={product.product_price} prod_quantity={product.quantity} />
           ))}
         </ul>
       )}
