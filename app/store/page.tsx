@@ -3,7 +3,8 @@ import ProductCard from "@/components/ProdCard";
 
 const Store = () => {
   return (
-    <div className="">
+    <div className="min-h-screen">
+      <img src='/Group_2.svg' className='w-screen h-screen fixed -z-10' />
       <br />
       <br />
       <br />

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import CartProdCart from '@/components/CartProdCart';
+import { redirect } from 'next/navigation';
 
 interface Product {
   product_name: string;
@@ -14,6 +15,11 @@ interface Product {
 const CartPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const handelCheckout = () => {
+    // TODO: Checkout
+    redirect('/checkout')
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -31,9 +37,11 @@ const CartPage = () => {
     fetchProducts();
   }, []);
   return (
-    <div>
+    <div className='min-h-screen'>
+      <img src='/Group_2.svg' className='w-screen h-screen fixed -z-10' />
       <h1 className='text-4xl font-bold md:p-10 text-slate-800'>Cart</h1>
       {isLoading && <p>Loading products...</p>}
+      {products.length === 0 && !isLoading && <p>No products in cart.</p>}
       {products.length > 0 && (
         <ul className='mt-5 flex flex-col md:flex-row flex-wrap'>
           {products.map((product) => (
@@ -41,6 +49,7 @@ const CartPage = () => {
           ))}
         </ul>
       )}
+      {products.length > 0 && !isLoading ? (<a href='/checkout' onClick={handelCheckout} className='ml-5 bg-slate-800 text-white rounded-md shadow-slate-700 shadow-md p-5'>Checkout!</a>) : ""}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import Image from 'next/image'
 const CartProdCart = ({ prod_img, prod_name, prod_price, prod_quantity }: { prod_img: string, prod_name: string, prod_price: number, prod_quantity: number }) => {
   return (
     <div>
-      <div className="flex flex-col m-5 p-5 bg-slate-200 shadow-black shadow-md">
+      <div className="flex flex-col m-5 p-5 bg-slate-200 shadow-black rounded-lg shadow-md mb-5">
         <Image alt="Image" width={500} height={500} src={prod_img} className="" />
         <br />
         <div className="flex flex-row justify-between">
